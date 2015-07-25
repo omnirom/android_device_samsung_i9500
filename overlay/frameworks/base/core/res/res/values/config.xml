@@ -135,15 +135,8 @@
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
-    <!-- Does the notification LED support multiple colors?
-         Used to decide if the user can change the colors -->
-    <bool name="config_multiColorNotificationLed">true</bool>
-
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveBatteryLed">true</bool>
-
-    <!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors -->
-    <bool name="config_multiColorBatteryLed">true</bool>
 
     <!-- Hardware 'face' keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
@@ -294,10 +287,6 @@
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
-    <!-- If true, then we do not ask user for permission for apps to connect to USB devices.
-         Do not set this to true for production devices. Doing so will cause you to fail CTS. -->
-    <bool name="config_disableUsbPermissionDialogs">true</bool>
-
     <!-- reference volume index for music stream to limit headphone volume and display warning -->
     <integer name="config_safe_media_volume_index">7</integer>
 
@@ -352,38 +341,7 @@
     <!-- Is the device LTE capable -->
     <bool name="config_lte_capable">false</bool>
 
-    <!-- Boolean to enable STK functionality on Samsung phones -->
-    <bool name="config_samsung_stk">true</bool>
-
     <!-- Panel auto-brightness configuration value
     <integer name="config_panelAutoBrightnessValue">1</integer> -->
-
-    <!-- Indicate the device's Smart Cover coordinates.
-         If none are provided, then the feature will be disabled.
-         The array should contain 4 values, in pixels, (sample values provided):
-         Top      0
-         Left     100
-         Bottom   Top + 400
-         Right    Display Width - 100
-    
-    <integer-array name="config_smartCoverWindowCoords">
-        <item>30</item>
-        <item>44</item>
-        <item>450</item>
-        <item>1036</item>
-    </integer-array> -->
-
-    <!-- CyanogenMod Performance profiles -->
-    <string name="config_perf_profile_prop">sys.perf.profile</string>
-    <string name="config_perf_profile_default_entry">1</string>
-
-    <!-- If there is no sysfs-based control mechanism, enable this -->
-    <bool name="useCameraInterface">false</bool>
-
-    <!-- Full path to the sysfs toggle -->
-    <string name="flashDevice">/sys/class/leds/torch-sec1/brightness</string>
-
-    <!-- On setting -->
-    <integer name="valueOn">255</integer>
 	
 </resources>
