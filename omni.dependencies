@@ -38,7 +38,7 @@
     {
         "remote": "github",
         "repository": "GearCM/android_kernel_samsung_exynos5410",
-        "revision": "GearKernel_Reborn",
+        "revision": "android-5.1",
         "target_path": "kernel/samsung/exynos5410"
     }
 ]
