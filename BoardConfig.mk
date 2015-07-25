@@ -48,17 +48,13 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a15
 
-# Hint the compiler that we're using a quad-core CPU
-BOARD_GLOBAL_CFLAGS += -mvectorize-with-neon-quad
-BOARD_GLOBAL_CPPFLAGS += -mvectorize-with-neon-quad
-
 # Enable QC's libm optimizations
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_KERNEL_CONFIG := cyanogenmod_i9500_defconfig
+TARGET_KERNEL_CONFIG := omnirom_i9500_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos5410
 
 # Audio
@@ -95,9 +91,6 @@ BOARD_USE_IMPROVED_BUFFER := true
 
 # GScaler
 BOARD_USES_GSC_VIDEO := true
-
-# CMHW
-BOARD_HARDWARE_CLASS := device/samsung/i9500/cmhw
 
 # Graphics
 USE_OPENGL_RENDERER := true
@@ -206,24 +199,24 @@ BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 CHARGING_ENABLED_PATH := "/sys/class/power_supply/battery/batt_lp_charging"
 
 # SELinux
-#BOARD_SEPOLICY_DIRS += \
-#    device/samsung/i9500/sepolicy
-#
-#BOARD_SEPOLICY_UNION := \
-#    device.te \
-#    drmserver.te \
-#    file_contexts \
-#    file.te \
-#    gpsd.te \
-#    mediaserver.te \
-#    property_contexts \
-#    property.te \
-#    pvrsrvctl.te \
-#    rild.te \
-#    shell.te \
-#    system_server.te \
-#    ueventd.te \
-#    wpa.te
+BOARD_SEPOLICY_DIRS += \
+    device/samsung/i9500/sepolicy
+
+BOARD_SEPOLICY_UNION := \
+    device.te \
+    drmserver.te \
+    file_contexts \
+    file.te \
+    gpsd.te \
+    mediaserver.te \
+    property_contexts \
+    property.te \
+    pvrsrvctl.te \
+    rild.te \
+    shell.te \
+    system_server.te \
+    ueventd.te \
+    wpa.te
 
 # Releasetools
 #TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)

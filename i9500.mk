@@ -158,24 +158,7 @@ PRODUCT_PACKAGES += \
 
 # Extra Apps
 PRODUCT_PACKAGES += \
-	Screencast \
 	AdvancedDisplay
-
-# OTA Updates
-PRODUCT_PACKAGES += \
-	OTAUpdates
-
-# SuperSU
-PRODUCT_PACKAGES += \
-	SuperSU \
-	.installed_su_daemon \
-	install-recovery \
-	99SuperSUDaemon \
-	libsupol.so \
-	daemonsu \
-	su \
-	sugote \
-	supolicy
 
 # Radio
 PRODUCT_COPY_FILES += \
@@ -191,43 +174,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.call_ring.multiple=false \
 	ro.telephony.call_ring.delay=3000
 
-# GearCM init
+# GearOMNI init
 PRODUCT_PACKAGES += \
 	gearinit.sh
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/rootdir/etc/busybox:root/sbin/busybox \
-	$(LOCAL_PATH)/synapse/config.json.generate:root/res/synapse/config.json.generate \
-	$(LOCAL_PATH)/synapse/config.json.generate.audio:root/res/synapse/config.json.generate.audio \
-	$(LOCAL_PATH)/synapse/config.json.generate.charger:root/res/synapse/config.json.generate.charger \
-	$(LOCAL_PATH)/synapse/config.json.generate.cpu:root/res/synapse/config.json.generate.cpu \
-	$(LOCAL_PATH)/synapse/config.json.generate.governor:root/res/synapse/config.json.generate.governor \
-	$(LOCAL_PATH)/synapse/config.json.generate.gpu:root/res/synapse/config.json.generate.gpu \
-	$(LOCAL_PATH)/synapse/config.json.generate.io:root/res/synapse/config.json.generate.io \
-	$(LOCAL_PATH)/synapse/config.json.generate.led:root/res/synapse/config.json.generate.led \
-	$(LOCAL_PATH)/synapse/config.json.generate.mem:root/res/synapse/config.json.generate.mem \
-	$(LOCAL_PATH)/synapse/config.json.generate.misc:root/res/synapse/config.json.generate.misc \
-	$(LOCAL_PATH)/synapse/config.json.generate.screen:root/res/synapse/config.json.generate.screen \
-	$(LOCAL_PATH)/synapse/config.json.generate.tools:root/res/synapse/config.json.generate.tools \
-	$(LOCAL_PATH)/synapse/config.json.generate.tweaks:root/res/synapse/config.json.generate.tweaks \
-	$(LOCAL_PATH)/synapse/sqlite3:root/res/synapse/sqlite3 \
-	$(LOCAL_PATH)/synapse/uci:root/res/synapse/uci \
-	$(LOCAL_PATH)/synapse/actions/boolean:root/res/synapse/actions/boolean \
-	$(LOCAL_PATH)/synapse/actions/bracket-option:root/res/synapse/actions/bracket-option \
-	$(LOCAL_PATH)/synapse/actions/buildprop:root/res/synapse/actions/buildprop \
-	$(LOCAL_PATH)/synapse/actions/charge-source:root/res/synapse/actions/charge-source \
-	$(LOCAL_PATH)/synapse/actions/colour:root/res/synapse/actions/colour \
-	$(LOCAL_PATH)/synapse/actions/devtools:root/res/synapse/actions/devtools \
-	$(LOCAL_PATH)/synapse/actions/dropcaches:root/res/synapse/actions/dropcaches \
-	$(LOCAL_PATH)/synapse/actions/dropcaches_prof:root/res/synapse/actions/dropcaches_prof \
-	$(LOCAL_PATH)/synapse/actions/generic:root/res/synapse/actions/generic \
-	$(LOCAL_PATH)/synapse/actions/governor:root/res/synapse/actions/governor \
-	$(LOCAL_PATH)/synapse/actions/gpuvolt:root/res/synapse/actions/gpuvolt \
-	$(LOCAL_PATH)/synapse/actions/ioset:root/res/synapse/actions/ioset \
-	$(LOCAL_PATH)/synapse/actions/led:root/res/synapse/actions/led \
-	$(LOCAL_PATH)/synapse/actions/printk:root/res/synapse/actions/printk \
-	$(LOCAL_PATH)/synapse/actions/sqlite:root/res/synapse/actions/sqlite \
-	$(LOCAL_PATH)/synapse/actions/voltage:root/res/synapse/actions/voltage
+	$(LOCAL_PATH)/rootdir/etc/busybox:root/sbin/busybox
 
 # Samsung STK
 PRODUCT_PACKAGES += \
@@ -281,21 +233,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072
 
-# Disable SELinux	
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.build.selinux=0
-	
-# Disable CM Superuser	
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.root_access=0
-
-# Development & ADB authentication settings
-ADDITIONAL_DEFAULT_PROPERTIES += \
-	ro.adb.secure=0 \
-	ro.build.selinux=0 \
-	ro.debuggable=1 \
-	ro.secure=0
-
 # Extended JNI checks
 # The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs 
 # before they have a chance to cause problems.
@@ -303,13 +240,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.kernel.android.checkjni=0 \
 	dalvik.vm.checkjni=false
-
-# ART Optimizations for Cortex-A15
-PRODUCT_PROPERTY_OVERRIDES += \
-	dalvik.vm.isa.arm.features=lpae,div \
-	dalvik.vm.dex2oat-filter=everything \
-	dalvik.vm.image-dex2oat-filter=everything \
-	dalvik.vm.dex2oat-flags=--no-watch-dog
 
 # Hardware Permissions
 PRODUCT_COPY_FILES += \

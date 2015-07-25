@@ -34,8 +34,3 @@ ro.ril.hsxpa=3
 
 # Reduce Debug Level
 nfc.app_log_level=2
-
-## OTA Updates ##
-ro.ota.romname=GearCM121
-ro.ota.version=20150724
-ro.ota.manifest=https://raw.githubusercontent.com/GearCM/android_device_samsung_i9500/cm-12.1/ota.xml

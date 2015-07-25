@@ -18,13 +18,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from i9500 device
 $(call inherit-product, device/samsung/i9500/i9500.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
-
-PRODUCT_NAME := cm_i9500
+PRODUCT_NAME := omni_i9500
 PRODUCT_DEVICE := i9500
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := GT-I9500
