@@ -60,42 +60,42 @@ struct route_config {
 /* TODO: Figure out whether voice routes need to set ES325 presets */
 const struct route_config voice_speaker = {
     "voice-speaker",
-    "voice-speaker-main-mic",
+    "voice-main-mic",
     { ES325_PRESET_OFF,
       ES325_PRESET_OFF }
 };
 
 const struct route_config voice_speaker_wb = {
-    "voice-speaker-wb",
-    "voice-speaker-main-mic-wb",
+    "voice-speaker",
+    "voice-main-mic",
     { ES325_PRESET_OFF,
       ES325_PRESET_OFF }
 };
 
 const struct route_config voice_earpiece = {
     "voice-earpiece",
-    "voice-earpiece-main-mic",
+    "voice-main-mic",
     { ES325_PRESET_OFF,
       ES325_PRESET_OFF }
 };
 
 const struct route_config voice_earpiece_wb = {
-    "voice-earpiece-wb",
-    "voice-earpiece-main-mic-wb",
+    "voice-earpiece",
+    "voice-main-mic",
     { ES325_PRESET_OFF,
       ES325_PRESET_OFF }
 };
 
 const struct route_config voice_headphones = {
     "voice-headphones",
-    "voice-headphones-main-mic",
+    "voice-main-mic",
     { ES325_PRESET_OFF,
       ES325_PRESET_OFF }
 };
 
 const struct route_config voice_headphones_wb = {
-    "voice-headphones-wb",
-    "voice-headphones-main-mic-wb",
+    "voice-headphones",
+    "voice-main-mic",
     { ES325_PRESET_OFF,
       ES325_PRESET_OFF }
 };
@@ -108,8 +108,8 @@ const struct route_config voice_headset = {
 };
 
 const struct route_config voice_headset_wb = {
-    "voice-headphones-wb",
-    "voice-headset-mic-wb",
+    "voice-headphones",
+    "voice-headset-mic",
     { ES325_PRESET_OFF,
       ES325_PRESET_OFF }
 };
@@ -179,21 +179,21 @@ const struct route_config voice_rec_headset = {
 
 const struct route_config communication_speaker = {
     "communication-speaker",
-    "communication-speaker-main-mic",
+    "communication-main-mic",
     { ES325_PRESET_VOIP_HANDHELD,
       ES325_PRESET_VOIP_DESKTOP }
 };
 
 const struct route_config communication_earpiece = {
     "communication-earpiece",
-    "communication-earpiece-main-mic",
+    "communication-main-mic",
     { ES325_PRESET_OFF,
       ES325_PRESET_OFF }
 };
 
 const struct route_config communication_headphones = {
     "communication-headphones",
-    "communication-earpiece-main-mic",
+    "communication-main-mic",
     { ES325_PRESET_VOIP_HEADPHONES,
       ES325_PRESET_VOIP_HP_DESKTOP}
 };
@@ -220,7 +220,7 @@ const struct route_config bluetooth_sco = {
 };
 
 const struct route_config bluetooth_sco_wb = {
-    "bt-sco-headset-wb",
+    "bt-sco-headset",
     "bt-sco-mic",
     { ES325_PRESET_OFF,
       ES325_PRESET_OFF }
