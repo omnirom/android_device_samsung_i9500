@@ -342,7 +342,21 @@ INPUT_CHANNEL_MAP {
 
   <!-- Capture paths -->
 
-  <path name="voice-main-mic">
+  <path name="voice-speaker-main-mic">
+      <path name="channel-stereo" />
+      <path name="aif2-stereo-mic" />
+      <path name="builtin-mic" />
+      <path name="back-mic" />
+  </path>
+
+  <path name="voice-earpiece-main-mic">
+      <path name="channel-stereo" />
+      <path name="aif2-stereo-mic" />
+      <path name="builtin-mic" />
+      <path name="back-mic" />
+  </path>
+
+  <path name="voice-headphones-main-mic">
       <path name="channel-stereo" />
       <path name="aif2-stereo-mic" />
       <path name="builtin-mic" />
@@ -379,7 +393,19 @@ INPUT_CHANNEL_MAP {
       <path name="builtin-mic" />
   </path>
 
-  <path name="communication-main-mic">
+  <path name="communication-speaker-main-mic">
+      <path name="channel-left" />
+      <path name="aif2-stereo-mic" />
+      <path name="builtin-mic" />
+  </path>
+
+  <path name="communication-earpiece-main-mic">
+      <path name="channel-left" />
+      <path name="aif2-stereo-mic" />
+      <path name="builtin-mic" />
+  </path>
+
+  <path name="communication-headphones-main-mic">
       <path name="channel-left" />
       <path name="aif2-stereo-mic" />
       <path name="builtin-mic" />
