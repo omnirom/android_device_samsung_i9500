@@ -1,0 +1,27 @@
+From 2bb39dc1771ed8eb94a9656071e1bc2d54c5fce4 Mon Sep 17 00:00:00 2001
+From: Ethan Chen <intervigil@gmail.com>
+Date: Sun, 18 Aug 2013 23:07:29 -0700
+Subject: [PATCH] exynos5: allow selective variant to be used
+
+Change-Id: I9b5d5abf387bc55fe2c75cadafca05cf09534e71
+---
+ Android.mk | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/Android.mk b/Android.mk
+index f279e33..b6b074f 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -16,6 +16,7 @@
+ #
+ 
+ ifeq ($(TARGET_BOARD_PLATFORM),exynos5)
++ifeq ($(TARGET_SLSI_VARIANT),)
+ 
+ exynos5_dirs := \
+ 	libion_exynos \
+@@ -61,3 +62,4 @@ USE_HWC_CSC_THREAD := true
+ include $(call all-named-subdir-makefiles,$(exynos5_dirs))
+ 
+ endif
++endif
