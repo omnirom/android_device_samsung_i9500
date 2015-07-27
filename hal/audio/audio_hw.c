@@ -298,6 +298,8 @@ static int get_output_device_id(audio_devices_t device)
     case AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET:
     case AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT:
         return OUT_DEVICE_BT_SCO;
+    case AUDIO_DEVICE_OUT_AUX_DIGITAL:
+        return OUT_DEVICE_AUX_DIGITAL;
     default:
         return OUT_DEVICE_NONE;
     }
