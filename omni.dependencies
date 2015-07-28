@@ -6,38 +6,38 @@
         "target_path": "packages/apps/SamsungServiceMode"
     },
     {
-        "remote": "github",
-        "repository": "CyanogenMod/android_hardware_samsung",
-        "revision": "cm-12.1",
+        "remote": "omnirom",
+        "repository": "android_hardware_samsung",
+        "revision": "android-5.1",
         "target_path": "hardware/samsung"
     },
     {
-        "remote": "github",
-        "repository": "CyanogenMod/android_hardware_samsung_slsi_exynos",
-        "revision": "cm-12.1",
+        "remote": "omnirom",
+        "repository": "android_hardware_samsung_slsi_exynos",
+        "revision": "android-5.1",
         "target_path": "hardware/samsung_slsi/exynos"
     },
     {
-        "remote": "github",
-        "repository": "GearCM/android_hardware_samsung_slsi_exynos5-insignal",
-        "revision": "cm-12.0",
+        "remote": "omnirom",
+        "repository": "android_hardware_samsung_slsi_exynos5-insignal",
+        "revision": "android-5.1",
         "target_path": "hardware/samsung_slsi/exynos5-insignal"
     },
     {
-        "remote": "github",
-        "repository": "GearCM/android_hardware_samsung_slsi_exynos5410",
-        "revision": "cm-12.0",
+        "remote": "omnirom",
+        "repository": "android_hardware_samsung_slsi_exynos5410",
+        "revision": "android-5.1",
         "target_path": "hardware/samsung_slsi/exynos5410"
     },
     {
-        "remote": "github",
-        "repository": "CyanogenMod/android_hardware_samsung_slsi_openmax",
-        "revision": "cm-12.1",
+        "remote": "omnirom",
+        "repository": "android_hardware_samsung_slsi_openmax",
+        "revision": "android-5.1",
         "target_path": "hardware/samsung_slsi/openmax"
     },
     {
-        "remote": "github",
-        "repository": "GearCM/android_kernel_samsung_exynos5410",
+        "remote": "omnirom",
+        "repository": "android_kernel_samsung_exynos5410",
         "revision": "android-5.1",
         "target_path": "kernel/samsung/exynos5410"
     }
