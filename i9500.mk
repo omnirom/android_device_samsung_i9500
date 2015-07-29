@@ -56,8 +56,10 @@ PRODUCT_PACKAGES += \
 	tinyplay
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	audio.offload.disable=1 \
-	af.fast_track_multiplier=1
+	audio.offload.disable=1
+	
+#PRODUCT_PROPERTY_OVERRIDES += \
+#	af.fast_track_multiplier=1
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
