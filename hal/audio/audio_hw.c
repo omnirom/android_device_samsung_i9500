@@ -925,7 +925,7 @@ static int get_next_buffer(struct resampler_buffer_provider *buffer_provider,
                                 in->frames_in : buffer->frame_count;
     buffer->i16 = in->buffer +
             (pcm_config_in.period_size - in->frames_in) *
-                popcount(in->channel_mask);
+                audio_channel_count_from_in_mask(in->channel_mask);
 
     return in->read_status;
 
@@ -1367,7 +1367,7 @@ static size_t in_get_buffer_size(const struct audio_stream *stream)
 
     return get_input_buffer_size(in->requested_rate,
                                  AUDIO_FORMAT_PCM_16_BIT,
-                                 popcount(in_get_channels(stream)));
+                                 audio_channel_count_from_in_mask(in_get_channels(stream)));
 }
 
 static audio_format_t in_get_format(const struct audio_stream *stream)
@@ -1646,7 +1646,7 @@ static int adev_open_output_stream(struct audio_hw_device *dev,
         out->channel_mask = config->channel_mask;
         out->config = pcm_config_hdmi_multi;
         out->config.rate = config->sample_rate;
-        out->config.channels = popcount(config->channel_mask);
+        out->config.channels = audio_channel_count_from_in_mask(config->channel_mask);
         out->pcm_device = PCM_DEVICE;
         type = OUTPUT_HDMI;
     } else if (flags & AUDIO_OUTPUT_FLAG_DEEP_BUFFER) {
@@ -1886,7 +1886,7 @@ static size_t adev_get_input_buffer_size(const struct audio_hw_device *dev,
 {
 
     return get_input_buffer_size(config->sample_rate, config->format,
-                                 popcount(config->channel_mask));
+                                 audio_channel_count_from_in_mask(config->channel_mask));
 }
 
 static int adev_open_input_stream(struct audio_hw_device *dev,
@@ -1956,7 +1956,7 @@ static int adev_open_input_stream(struct audio_hw_device *dev,
 
         ret = create_resampler(pcm_config_in.rate,
                                in->requested_rate,
-                               popcount(in->channel_mask),
+                               audio_channel_count_from_in_mask(in->channel_mask),
                                RESAMPLER_QUALITY_DEFAULT,
                                &in->buf_provider,
                                &in->resampler);
