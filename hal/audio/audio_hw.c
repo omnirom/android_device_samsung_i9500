@@ -252,6 +252,8 @@ struct stream_in {
     uint16_t ramp_frames;
 
     audio_channel_mask_t channel_mask;
+    audio_input_flags_t flags;
+    struct pcm_config *config;
 
     struct audio_device *dev;
 };
