@@ -1,3 +1,6 @@
+# Audio
+/dev/srp                                                u:object_r:audio_device:s0
+
 # Bluetooth
 /dev/btlock                                             u:object_r:bluetooth_device:s0
 /dev/ttySAC0                                            u:object_r:hci_attach_dev:s0
@@ -18,6 +21,7 @@
 
 # NFC
 /dev/bcm2079x                                           u:object_r:nfc_device:s0
+/data/bcmnfc(/.*)?                                      u:object_r:nfc_data_file:s0
 
 # Radio
 /dev/block/platform/dw_mmc.0/by-name/EFS                u:object_r:radio_block_device:s0

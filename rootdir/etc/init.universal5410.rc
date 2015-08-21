@@ -521,6 +521,9 @@ on boot
 	chmod 0222 /sys/kernel/debug/tracing/trace_marker
 	write /sys/kernel/debug/tracing/tracing_on 0
 
+# Set mDNIe Auto Mode
+	write /sys/class/mdnie/mdnie/mode 4
+
 # Clean-Up GPS Stuff
 	rm /data/gps_started
 	rm /data/glonass_started
@@ -676,13 +679,6 @@ service scranton_RD /system/bin/scranton_RD
 	disabled
 	oneshot
 
-# Workaround for broken in-call audio
-service bootsnd /system/bin/tinyplay /system/etc/sound/silence.wav -D 0 -d 0 -p 880
-	class late_start
-	user root
-	group audio
-	oneshot
-
 # MobiCore
 service mobicore /system/bin/mcDriverDaemon \
 	-r /system/vendor/firmware/mcRegistry/FFFFFFFF000000000000000000000001.drbin \
@@ -741,7 +737,7 @@ on property:sys.perf.profile=1
 	write /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_max_lock 532
 	write /sys/class/devfreq/exynos5-busfreq-mif/min_freq 100000
 	write /sys/class/devfreq/exynos5-busfreq-mif/max_freq 800000
-	write /sys/class/thermal/thermal_zone0/boost_mode 1
+	write /sys/class/thermal/thermal_zone0/boost_mode 0
 
 # Performance
 on property:sys.perf.profile=2
@@ -749,8 +745,8 @@ on property:sys.perf.profile=2
 	write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor performance
 	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor performance
 	write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor performance
-	write /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_min_lock 640
-	write /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_max_lock 640
+	write /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_min_lock 532
+	write /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_max_lock 532
 	write /sys/class/devfreq/exynos5-busfreq-mif/min_freq 800000
 	write /sys/class/devfreq/exynos5-busfreq-mif/max_freq 800000
 	write /sys/class/thermal/thermal_zone0/boost_mode 2
